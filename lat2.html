@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            background-color: #c0c0c0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            padding: 10px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            min-height: 25px;
+        }
+
+        .form-label {
+            width: 80px;
+            text-align: left;
+            padding-right: 10px;
+            font-weight: normal;
+            padding-top: 3px;
+        }
+
+        .form-input {
+            flex: 1;
+            position: relative;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            height: 20px;
+            border: 2px inset #c0c0c0;
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            padding: 2px 4px;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            border: 2px inset #c0c0c0;
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            padding: 4px;
+            background-color: white;
+            resize: none;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .scrollbar-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .scrollbar {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            background-color: #c0c0c0;
+            border-left: 1px solid #808080;
+        }
+
+        .scrollbar-thumb {
+            position: absolute;
+            top: 16px;
+            right: 0;
+            width: 16px;
+            height: 30px;
+            background-color: #c0c0c0;
+            border: 1px outset #c0c0c0;
+        }
+
+        .scrollbar-arrow {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #c0c0c0;
+            border: 1px outset #c0c0c0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: black;
+        }
+
+        .scrollbar-arrow.up {
+            top: 0;
+            right: 0;
+        }
+
+        .scrollbar-arrow.down {
+            bottom: 0;
+            right: 0;
+        }
+
+        .scrollbar-arrow:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .scrollbar-arrow.up:before {
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom: 4px solid black;
+        }
+
+        .scrollbar-arrow.down:before {
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 4px solid black;
+        }
+
+        .address-container {
+            position: relative;
+        }
+
+        .address-textarea {
+            padding-right: 20px;
+        }
+
+        .postcode-input {
+            width: 150px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #808080;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <div class="form-row">
+                <label class="form-label">Name:</label>
+                <div class="form-input">
+                    <input type="text" placeholder="Nama Anda">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Email:</label>
+                <div class="form-input">
+                    <input type="email" placeholder="Email Anda">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Address:</label>
+                <div class="form-input">
+                    <div class="address-container">
+                        <div class="scrollbar-container">
+                            <textarea class="address-textarea" placeholder="Alamat Anda"></textarea>
+                            <div class="scrollbar">
+                                <div class="scrollbar-arrow up"></div>
+                                <div class="scrollbar-thumb"></div>
+                                <div class="scrollbar-arrow down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Postcode:</label>
+                <div class="form-input">
+                    <input type="text" class="postcode-input" placeholder="Kode Pos Anda">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
